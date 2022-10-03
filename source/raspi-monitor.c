@@ -8,11 +8,17 @@ char banner[] = "                       _                       _               
 // FILE PARSER
 
 void openVpnFileParser(char completePath[]){
-    FILE *vpnLogFile
+    FILE *vpnLogFile;
     vpnLogFile = fopen(completePath, "r");
     
-    // read info
+    if(vpnLogFile == NULL){
+        menu("error: cant find vpn log file");
+    }
     
+    // iterate throught file
+    for(char fileCH = fgets(vpnLogFile); fileCH != E0F;){
+        printf("%c", fileCH);
+    }
     
     fclose(vpnLogFile);
 
@@ -30,6 +36,9 @@ void config(){
     int menuConfOption;
     scanf("%d", &menuConfOption);
     
+    openVpnFileParser("/var/log/openvpn/status.log");
+    
+    return;
 }
 
 void serverStatus(){
@@ -40,6 +49,7 @@ void serverStatus(){
     int menuServSOption;
     scanf("%d", &menuServSOption);
     
+    return;
 }
 
 void serverInfo(){
@@ -50,10 +60,14 @@ void serverInfo(){
     int menuServIOption;
     scanf("%d", &menuServIOption);
     
+    return;
+    
 }
 
 void updateCheck(){
     menu("Alredy updated!");
+    
+    return;
 }
 
 int menu(char message[]){
@@ -80,6 +94,7 @@ int menu(char message[]){
             updateCheck();
             break;
         case 0:
+            exit(1);
             break;
         default:
             menu("Inexistring option");
@@ -88,7 +103,7 @@ int menu(char message[]){
 
 void main(){
     int exitCode = menu("Welcome!");
-    printf("\nBye!  =>  exit code: %d\n", exitCode);
+    printf("\nBye! => exit code: %d\n", exitCode);
 }
 
 
