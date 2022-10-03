@@ -16,7 +16,7 @@ void openVpnFileParser(char completePath[]){
     }
     
     // iterate throught file
-    for(char fileCH = fgets(vpnLogFile); fileCH != E0F;){
+    for(char fileCH = fgets(vpnLogFile); fileCH != EOF;){
         printf("%c", fileCH);
     }
     
