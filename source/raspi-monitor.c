@@ -11,14 +11,16 @@ void openVpnFileParser(char completePath[]){
     FILE *vpnLogFile;
     vpnLogFile = fopen(completePath, "r");
     
+    char fileText[255];
+    
     if(vpnLogFile == NULL){
         menu("error: cant find vpn log file");
     }
     
     // iterate throught file
-    for(char fileCH[25] = fgets(vpnLogFile); fileCH != EOF;){
-        printf("%c", fileCH);
-    }
+    fgets(&fileText, 255, vpnLogFile);
+    
+    printf("%s", fileText)
     
     fclose(vpnLogFile);
 
