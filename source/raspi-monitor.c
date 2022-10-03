@@ -8,7 +8,7 @@ char banner[] = "                       _                       _               
 // FILE PARSER
 
 void openVpnFileParser(char completePath[]){
-    FILE *vpnLogFile
+    FILE *vpnLogFile;
     vpnLogFile = fopen(completePath, "r");
     
     // read info
