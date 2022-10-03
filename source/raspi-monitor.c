@@ -20,7 +20,7 @@ void openVpnFileParser(char completePath[]){
     // iterate throught file
     fgets(&fileText, 255, vpnLogFile);
     
-    printf("%s", fileText)
+    printf("%s", fileText);
     
     fclose(vpnLogFile);
 
