@@ -18,7 +18,7 @@ void openVpnFileParser(char completePath[]){
     }
     
     // iterate throught file
-    fgets(&fileText, 255, vpnLogFile);
+    
     
     printf("%s", fileText);
     
@@ -107,6 +107,3 @@ void main(){
     int exitCode = menu("Welcome!");
     printf("\nBye! => exit code: %d\n", exitCode);
 }
-
-
-
