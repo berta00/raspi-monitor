@@ -27,6 +27,13 @@ void openVpnFileParser(char completePath[]){
     return;
 }
 
+// SYSTEM DATA
+
+int getIp(){
+    
+    return 154;
+}
+
 
 // MENU FUNCTIONS
 
@@ -46,7 +53,7 @@ void config(){
 void serverStatus(){
     system("clear");
     printf("%s", banner);
-    printf("\n\nserverStatus> ");
+    printf("\nserverStatus> ");
     
     int menuServSOption;
     scanf("%d", &menuServSOption);
@@ -55,12 +62,59 @@ void serverStatus(){
 }
 
 void serverInfo(){
-    system("clear");
-    printf("%s", banner);
-    printf("\n\nserverInfo> ");
+    int clearTerminal = 1;
+    int serverInfoExit = 0;
     
-    int menuServIOption;
-    scanf("%d", &menuServIOption);
+    while(serverInfoExit == 0){
+        
+        if(clearTerminal == 1){
+            system("clear");
+            printf("%s", banner);
+            
+            clearTerminal = 0;
+        }
+        
+        printf("\n\nserverInfo> ");
+        
+        char menuServerIOption[100] = "";
+        scanf("%s", &menuServerIOption);
+        
+        if(strcmp(menuServerIOption, "man") == 0){
+            // manual
+            printf("\nRaspi-Monitor info manual  \n\nCommands:            Description:\n");
+            printf("---------------------------------------------------------------------------\n");
+            printf("- \"ip\"               returns all the raspberry ip information  \n");
+            printf("- \"webserverStatus\"  returns all the raspi-monitor webserver status  \n");
+            printf("- \"raspberryInfo\"    returns all the raspberry hardware/software information  \n");
+            printf("- \"clear\"            just clear the shell  \n");
+            printf("- \"back\"             returns to menu");
+            
+        }else if(strcmp(menuServerIOption, "ip") == 0){
+            // ip information
+            //char currentIp[] = getIp();
+            
+            printf("local ip: %s  \nnetmask: %s  \ninterface: %s", "192.168.1.154", "255.255.255.0", "wlan0");
+            
+        } else if(strcmp(menuServerIOption, "webserverStatus") == 0){
+            // webserver status
+            
+        } else if(strcmp(menuServerIOption, "raspberryInfo")   == 0){
+            // raspberry info
+            
+        } else if(strcmp(menuServerIOption, "clear")           == 0){
+            // clear terminal
+            clearTerminal = 1;
+            
+        } else if(strcmp(menuServerIOption, "back")            == 0){
+            // exit
+            serverInfoExit = 1;
+            
+        } else {
+            printf("\"%s\": Unknown command", menuServerIOption);
+        }
+    }
+    
+    menu(" ");
     
     return;
     
@@ -73,34 +127,40 @@ void updateCheck(){
 }
 
 int menu(char message[]){
-    system("clear");
-    printf("%s", banner);
-    printf("\n1.Configuration      2.Server start/stop  \n3.Server info        4.Ceck update  \n\n");
-    printf("%s", message);
-    printf("\n> ");
+    int menuExit = 0;
     
-    int menuOption;
-    scanf("%d", &menuOption);
-    
-    switch(menuOption){
-        case 1:
-            config();
-            break;
-        case 2:
-            serverStatus();
-            break;
-        case 3:
-            serverInfo();
-            break;
-        case 4:
-            updateCheck();
-            break;
-        case 0:
-            exit(1);
-            break;
-        default:
-            menu("Inexistring option");
+    while(menuExit == 0){
+        system("clear");
+        printf("%s", banner);
+        printf("\n1.Configuration      2.Server start/stop  \n3.Server info        4.Ceck update  \n\n");
+        printf("%s", message);
+        printf("\n> ");
+        
+        int menuOption;
+        scanf("%d", &menuOption);
+        
+        switch(menuOption){
+            case 1:
+                config();
+                break;
+            case 2:
+                serverStatus();
+                break;
+            case 3:
+                serverInfo();
+                break;
+            case 4:
+                updateCheck();
+                break;
+            case 0:
+                menuExit = 1;
+                break;
+            default:
+                menu("Inexistring option");
+        }
     }
+    exit(0);
+
 }
 
 void main(){
