@@ -1,0 +1,10 @@
+OpenVPN CLIENT LIST
+Updated,2022-09-27 16:01:23
+Common Name,Real Address,Bytes Received,Bytes Sent,Connected Since
+ovpn-raspberry,000.00.000.000:00000,0000000,00000000,2022-09-27 15:39:40
+ROUTING TABLE
+Virtual Address,Common Name,Real Address,Last Ref
+00.0.0.0,ovpn-raspberry,000.00.000.000:00000,2022-09-27 16:01:22
+GLOBAL STATS
+Max bcast/mcast queue length,1
+END
