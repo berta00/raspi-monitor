@@ -3,7 +3,7 @@
 
 if ls /bin/raspi-monitor; then
     echo "already installed"
-elseß
+else
     mv ./../bin/raspi-monitor /bin/raspi-monitor
     echo "installed"
 fi
