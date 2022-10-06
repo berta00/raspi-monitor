@@ -10,7 +10,6 @@
 		DB9749F628EB15040062FBDE /* bin */ = {isa = PBXFileReference; lastKnownFileType = folder; path = bin; sourceTree = "<group>"; };
 		DB9749F728EB15040062FBDE /* test */ = {isa = PBXFileReference; lastKnownFileType = folder; path = test; sourceTree = "<group>"; };
 		DB9749F828EB15040062FBDE /* source */ = {isa = PBXFileReference; lastKnownFileType = folder; path = source; sourceTree = "<group>"; };
-		DBEC109028EC91A60077884A /* install */ = {isa = PBXFileReference; lastKnownFileType = folder; path = install; sourceTree = "<group>"; };
 		DBEC109228EC92360077884A /* sql-schema */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "sql-schema"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -19,7 +18,6 @@
 			isa = PBXGroup;
 			children = (
 				DBEC109228EC92360077884A /* sql-schema */,
-				DBEC109028EC91A60077884A /* install */,
 				DB9749F628EB15040062FBDE /* bin */,
 				DB9749F828EB15040062FBDE /* source */,
 				DB9749F728EB15040062FBDE /* test */,
