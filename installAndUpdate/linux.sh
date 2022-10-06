@@ -6,14 +6,14 @@ if ls /bin/raspi-monitor; then
     # compile for linux
     gcc ./../source/raspi-monitor.c -w -o ./../bin/raspi-monitor
     # move to /bin directoryß
-    mv ./../bin/raspi-monitor /bin/raspi-monitor
+    sudo mv ./../bin/raspi-monitor /bin/raspi-monitor
     echo "installed and updated"
     
 else
     # compile for linux
     gcc ./../source/raspi-monitor.c -w -o ./../bin/raspi-monitor
     # move to /bin directory
-    mv ./../bin/raspi-monitor /bin/raspi-monitor
+    sudo mv ./../bin/raspi-monitor /bin/raspi-monitor
     echo "installed"
 fi
 
