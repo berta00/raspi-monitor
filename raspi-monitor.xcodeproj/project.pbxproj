@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		DB616B0228EF3B5D002BFC0D /* install&update */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "install&update"; sourceTree = "<group>"; };
+		DB616B0328EF3C12002BFC0D /* installAndUpdate */ = {isa = PBXFileReference; lastKnownFileType = folder; path = installAndUpdate; sourceTree = "<group>"; };
 		DB9749F628EB15040062FBDE /* bin */ = {isa = PBXFileReference; lastKnownFileType = folder; path = bin; sourceTree = "<group>"; };
 		DB9749F828EB15040062FBDE /* source */ = {isa = PBXFileReference; lastKnownFileType = folder; path = source; sourceTree = "<group>"; };
 		DBEC109228EC92360077884A /* sql-schema */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "sql-schema"; sourceTree = "<group>"; };
@@ -17,7 +17,7 @@
 		DB9749ED28EB13DE0062FBDE = {
 			isa = PBXGroup;
 			children = (
-				DB616B0228EF3B5D002BFC0D /* install&update */,
+				DB616B0328EF3C12002BFC0D /* installAndUpdate */,
 				DBEC109228EC92360077884A /* sql-schema */,
 				DB9749F628EB15040062FBDE /* bin */,
 				DB9749F828EB15040062FBDE /* source */,
