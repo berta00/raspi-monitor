@@ -1,5 +1,4 @@
-
-// raspi-monitor auto installation script
+# raspi-monitor auto installation script
 
 if ls /bin/raspi-monitor; then
     echo "already installed"
