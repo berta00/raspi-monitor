@@ -7,6 +7,15 @@ char banner[] = "                       _                       _               
 
 // FILE PARSER
 
+void settingFileParser(char completePath[]){
+    FILE *jsonConfigFile;
+    jsonConfigFile = fopen(completePath, "r");
+    
+    if(jsonConfigFile == NULL){
+        menu("error: cant find config file!")
+    }
+}
+
 void openVpnFileParser(char completePath[]){
     FILE *vpnLogFile;
     vpnLogFile = fopen(completePath, "r");
@@ -32,17 +41,65 @@ void openVpnFileParser(char completePath[]){
 int getIp(){
     return 154;
 }
-
+ 
+void statusBackupFile(char zipPath[]){
+    FILE *statusBackupFile;
+    
+    // unzipfile
+    system("sudo gzip -d -k %s", zipPath);
+    // get file name
+    char fileName[] = "";
+    int iterator = 0;
+    for(int characterIndex = 0; characterIndex < zipPath; characterIndex++){
+        if(zipPath[characterIndex] == '/'){
+            fileName[iterator] = zipPath[characterIndex];
+            iterator++;
+        } else {
+            char fileName[] = "";
+            iterator = 0;
+        }
+    }
+    
+    statusBackupFile = fopen(fileName, "r");
+    
+    if(statusBackupFile == NULL){
+        menu("error: cant find status file from backup");
+    }
+}
 
 // MENU FUNCTIONS
 
 void config(){
     system("clear");
     printf("%s", banner);
-    printf("\n\nconfig> ");
+    printf("\n\n(config)> ");
     
-    int menuConfOption;
-    scanf("%d", &menuConfOption);
+    char menuConfigOption[100] = "";
+    scanf("%s", &menuConfigOption);
+    
+    if(strcmp(menuConfigOption, "man")){
+        // manual
+        printf("\nRaspi-Monitor config manual  \n\nCommands:            Description:\n");
+        printf("---------------------------------------------------------------------------\n");
+        printf("- \"ip\"               set ip assegnation option  \n");
+        printf("- \"openVpn\"          set all the openvpn options  \n");
+        printf("- \"ssh\"              set all the ssh (server) option  \n");
+        printf("- \"ftp\"              set all the ftp options  \n");
+        printf("- \"clear\"            just clear the shell  \n");
+        printf("- \"back\"             returns to menu");
+        
+    } else if (strcmp(menuConfigOption, "ip")){
+        // ip options
+        printf("\n1.DHCP         2.");
+        printf("\n\n(config-ip)> ");
+        
+        int menuConfigIpOption = 0;
+        scanf("%d", &menuConfigIpOption);
+        
+        if(){
+            
+        }
+    }
     
     openVpnFileParser("/var/log/openvpn/status.log");
     
@@ -52,7 +109,7 @@ void config(){
 void serverStatus(){
     system("clear");
     printf("%s", banner);
-    printf("\nserverStatus> ");
+    printf("\n(serverStatus)> ");
     
     int menuServSOption;
     scanf("%d", &menuServSOption);
@@ -73,7 +130,7 @@ void serverInfo(){
             clearTerminal = 0;
         }
         
-        printf("\n\nserverInfo> ");
+        printf("\n\n(serverInfo)> ");
         
         char menuServerIOption[100] = "";
         scanf("%s", &menuServerIOption);
@@ -88,7 +145,7 @@ void serverInfo(){
             printf("- \"clear\"            just clear the shell  \n");
             printf("- \"back\"             returns to menu");
             
-        }else if(strcmp(menuServerIOption, "ip") == 0){
+        } else if(strcmp(menuServerIOption, "ip") == 0){
             // ip information
             //char currentIp[] = getIp();
             
@@ -161,7 +218,7 @@ int menu(char message[]){
                 menu("Inexistring option");
         }
     }
-    exit(0);
+    return 0;
 
 }
 

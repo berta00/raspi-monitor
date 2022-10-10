@@ -8,6 +8,8 @@
 
 /* Begin PBXFileReference section */
 		DB616B0328EF3C12002BFC0D /* installAndUpdate */ = {isa = PBXFileReference; lastKnownFileType = folder; path = installAndUpdate; sourceTree = "<group>"; };
+		DB90A70F28F4545F00B9F16E /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		DB90A71028F455D400B9F16E /* settings */ = {isa = PBXFileReference; lastKnownFileType = folder; path = settings; sourceTree = "<group>"; };
 		DB9749F628EB15040062FBDE /* bin */ = {isa = PBXFileReference; lastKnownFileType = folder; path = bin; sourceTree = "<group>"; };
 		DB9749F828EB15040062FBDE /* source */ = {isa = PBXFileReference; lastKnownFileType = folder; path = source; sourceTree = "<group>"; };
 		DBEC109228EC92360077884A /* sql-schema */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "sql-schema"; sourceTree = "<group>"; };
@@ -17,6 +19,8 @@
 		DB9749ED28EB13DE0062FBDE = {
 			isa = PBXGroup;
 			children = (
+				DB90A71028F455D400B9F16E /* settings */,
+				DB90A70F28F4545F00B9F16E /* README.md */,
 				DB616B0328EF3C12002BFC0D /* installAndUpdate */,
 				DBEC109228EC92360077884A /* sql-schema */,
 				DB9749F628EB15040062FBDE /* bin */,
